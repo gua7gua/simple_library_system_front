@@ -41,9 +41,9 @@ request.interceptors.response.use(
       }
     }
 
-    // 处理分页查询响应（code: 0）
+    // 处理分页查询响应（code: 0 或 code: 200）
     if (res.code !== undefined) {
-      if (res.code === 0) {
+      if (res.code === 0 || res.code === 200) {
         return res
       } else {
         ElMessage.error(res.message || '查询失败')

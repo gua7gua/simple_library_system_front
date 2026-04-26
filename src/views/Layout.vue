@@ -45,6 +45,11 @@
               <span>修改密码</span>
             </el-menu-item>
 
+            <el-menu-item index="/donation">
+              <el-icon><Present /></el-icon>
+              <span>图书捐赠</span>
+            </el-menu-item>
+
             <!-- 管理员菜单 -->
             <template v-if="isAdmin">
               <el-divider />
@@ -68,6 +73,11 @@
                 <el-icon><Collection /></el-icon>
                 <span>类型管理</span>
               </el-menu-item>
+
+              <el-menu-item index="/admin/donation-manage">
+                <el-icon><Present /></el-icon>
+                <span>捐赠管理</span>
+              </el-menu-item>
             </template>
           </el-menu>
         </el-aside>
@@ -85,7 +95,7 @@
 import { ref, computed, onMounted } from 'vue'
 import { useRouter, useRoute } from 'vue-router'
 import { ElMessage, ElMessageBox } from 'element-plus'
-import { HomeFilled, Reading, Document, Lock, User, Collection } from '@element-plus/icons-vue'
+import { HomeFilled, Reading, Document, Lock, User, Collection, Present } from '@element-plus/icons-vue'
 import { logout } from '@/api/user'
 
 const router = useRouter()

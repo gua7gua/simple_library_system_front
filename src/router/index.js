@@ -6,10 +6,12 @@ import Dashboard from '@/views/Dashboard.vue'
 import BookList from '@/views/BookList.vue'
 import BorrowRecord from '@/views/BorrowRecord.vue'
 import PasswordChange from '@/views/PasswordChange.vue'
+import Donation from '@/views/Donation.vue'
 import BookManage from '@/views/admin/BookManage.vue'
 import BorrowManage from '@/views/admin/BorrowManage.vue'
 import UserManage from '@/views/admin/UserManage.vue'
 import BookTypeManage from '@/views/admin/BookTypeManage.vue'
+import DonationManage from '@/views/admin/DonationManage.vue'
 import NotFound from '@/views/NotFound.vue'
 
 const routes = [
@@ -55,6 +57,12 @@ const routes = [
         meta: { title: '修改密码' }
       },
       {
+        path: '/donation',
+        name: 'Donation',
+        component: Donation,
+        meta: { title: '图书捐赠' }
+      },
+      {
         path: '/admin/book-manage',
         name: 'BookManage',
         component: BookManage,
@@ -77,6 +85,12 @@ const routes = [
         name: 'BookTypeManage',
         component: BookTypeManage,
         meta: { title: '类型管理', requireAdmin: true }
+      },
+      {
+        path: '/admin/donation-manage',
+        name: 'DonationManage',
+        component: DonationManage,
+        meta: { title: '捐赠管理', requireAdmin: true }
       }
     ]
   },
